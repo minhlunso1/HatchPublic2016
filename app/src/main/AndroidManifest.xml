@@ -16,7 +16,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".RatingActivity"
-            android:label="@string/Rating"/>
+            android:label="@string/Rating"
+            android:windowSoftInputMode="adjustResize"/>
     </application>
 
 </manifest>
