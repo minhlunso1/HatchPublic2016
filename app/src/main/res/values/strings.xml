@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">HatchSolution</string>
+    <string name="Search">Tỉm kiếm</string>
+    <string name="trip_demo">Sài Gòn - Đà Lạt</string>
+    <string name="Driver">Tài xế</string>
+    <string name="Trip_demo">Sài Gòn - Nha Trang 1/9/2016</string>
+    <string name="drawer_open">Mở menu</string>
+    <string name="drawer_close">Đóng menu</string>
+    <string name="Review">Xem</string>
+    <string name="Book_trip">Đặt chuyến</string>
+    <string name="NMT">Nguyễn Minh Trí</string>
+    <string name="filter">Lọc Tài Xế</string>
+    <string name="Star">Sao</string>
+    <string name="Client">Nhà Xe</string>
+    <string name="Please_choose_another">Chưa có thông tin. Vui lòng chọn tài xế khác.</string>
+    <string name="all">Tất Cả</string>
+    <string name="Mark">Điểm</string>
+    <string name="demo_price">190.000đ</string>
+    <string name="demo_chair">Giường nằm 40 chỗ</string>
+    <string name="Leave_comment">Để lại nhận xét của bạn&#8230;</string>
+    <string name="Send">Gửi</string>
+    <string name="Rating">Nhận Xét</string>
+</resources>

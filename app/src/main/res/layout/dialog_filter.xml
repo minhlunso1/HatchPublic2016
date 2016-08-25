@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/tvSearchFilter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:text="@string/filter"
+        android:textColor="@color/colorPrimary"
+        android:textSize="24sp" />
+
+    <Button
+        android:id="@+id/btnDone"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginBottom="5dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignBottom="@+id/tvSearchFilter"
+        android:background="@drawable/ic_done"/>
+
+    <View
+        android:id="@+id/border"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="8dp"
+        android:layout_below="@+id/tvSearchFilter" />
+
+    <TextView
+        android:id="@+id/tvDistance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/border"
+        android:layout_marginTop="30dp"
+        android:text="@string/Mark"
+        android:textColor="@color/colorPrimary"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/tvStarNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="5 sao"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="16dp"
+        android:textColor="@color/black"
+        android:layout_alignBottom="@+id/tvDistance"/>
+
+    <io.apptik.widget.MultiSlider
+        android:id="@+id/sliderStar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvDistance"
+        android:layout_marginTop="8dp"
+        app:trackColor="@color/black"
+        app:range1Color="@color/colorAccent"
+        app:rangeColor="@color/colorAccent"
+        app:thumbColor="@color/colorAccent"
+        app:range1="@drawable/multislider_scrubber_track_holo_light"
+        app:scaleMax="5"
+        app:scaleMin="1"
+        app:scaleStep="1"
+        app:thumbValue1="1"
+        app:thumbValue2="5"
+        app:drawThumbsApart="true"
+        app:thumbNumber="2" />
+
+    <TextView
+        android:id="@+id/tvGender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/sliderStar"
+        android:layout_marginTop="30dp"
+        android:text="@string/Client"
+        android:textColor="@color/colorPrimary"
+        android:textSize="16sp" />
+
+    <com.rey.material.widget.Spinner
+        android:id="@+id/spinnerGroup"
+        style="@style/GenderSpinner"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/tvGender"
+        android:layout_alignParentRight="true"
+        app:spn_labelTextColor="@color/black"
+        app:spn_labelTextSize="12dp"
+        app:spn_arrowColor="@color/colorAccent"
+        app:spn_dividerColor="@color/colorAccent"
+        app:rd_style="@style/Material.Drawable.Ripple.Wave" />
+
+</RelativeLayout>
