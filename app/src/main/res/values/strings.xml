@@ -15,10 +15,15 @@
     <string name="Please_choose_another">Chưa có thông tin. Vui lòng chọn tài xế khác.</string>
     <string name="all">Tất Cả</string>
     <string name="Mark">Điểm</string>
-    <string name="demo_price">190.000đ</string>
+    <string name="demo_price">190.000đ / vé</string>
     <string name="demo_chair">Giường nằm 40 chỗ</string>
     <string name="Leave_comment">Để lại lời nhận xét&#8230;</string>
     <string name="Send">Gửi</string>
     <string name="Rating">Nhận Xét</string>
     <string name="Intro_rating_screen">Bạn vừa kết thúc chuyến đi, hãy để lại góp ý của bạn.</string>
+
+    <string name="Group_1">Việt Khuê</string>
+    <string name="Group_2">Hotelic</string>
+    <string name="Group_3">Hoa Cúc</string>
+    <string name="Depart">Khởi hành:</string>
 </resources>

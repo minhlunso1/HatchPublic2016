@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,6 +30,10 @@ public class CommentDialog extends DialogFragment {
 
     @BindView(R.id.rv)
     RecyclerView rv;
+    @BindView(R.id.title)
+    TextView tvTitle;
+    @BindView(R.id.tv_price)
+    TextView tvPrice;
 
     private CommentAdapter adapter;
     private AppCompatActivity activity;
@@ -61,16 +66,30 @@ public class CommentDialog extends DialogFragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        tvTitle.setText(AC.GROUP_CHOOSEN);
+        tvPrice.setText(AC.PRICE_CHOOSEN);
         getData();
         setupRV();
     }
 
     private void getData() {
         List<Comment> list = new ArrayList<>();
-        list.add(new Comment(R.drawable.user_9,"Rita Phạm","Lái xe an toàn", 5));
-        list.add(new Comment(R.drawable.user_7, "Trang Phan","Dịch vụ tốt, tài xế chu đáo", 5));
-        list.add(new Comment(R.drawable.user_8,"Lệ Quyên","Tuy chậm mà chắc. Yên tâm.", 3));
-        list.add(new Comment(R.drawable.user_10,"Chi Nguyen","Không vượt ẩu", 5));
+        if (AC.GROUP_CHOOSEN_TYPE==1) {
+            list.add(new Comment(R.drawable.user_9, "Rita Phạm", "Chạy xe an toàn, hài long với chất lượng", 5));
+            list.add(new Comment(R.drawable.user_7, "Trang Phan", "Dịch vụ tốt, tài xế chu đáo", 5));
+            list.add(new Comment(R.drawable.user_8, "Lệ Quyên", "Không vượt ẩu", 4));
+            list.add(new Comment(R.drawable.user_10, "Chi Nguyen", "Xe sạch sẽ, giường nằm thoải mái", 5));
+        } else if (AC.GROUP_CHOOSEN_TYPE==2) {
+            list.add(new Comment(R.drawable.user_9, "Rita Phạm", "Thường hay lấn tuyến", 2));
+            list.add(new Comment(R.drawable.user_7, "Trang Phan", "Dịch vụ tốt, tài xế chu đáo", 5));
+            list.add(new Comment(R.drawable.user_8, "Lệ Quyên", "Thời gian nghỉ giữa chuyến quá nhanh", 3));
+            list.add(new Comment(R.drawable.user_10, "Chi Nguyen", "Còn vượt ẩu", 2));
+        } else {
+            list.add(new Comment(R.drawable.user_9, "Rita Phạm", "Thường hay lấn tuyến", 2));
+            list.add(new Comment(R.drawable.user_7, "Trang Phan", "Chăm sóc khách chưa tốt", 2));
+            list.add(new Comment(R.drawable.user_8, "Lệ Quyên", "Chua thật sự yên tâm với nhà xe", 2));
+            list.add(new Comment(R.drawable.user_10, "Chi Nguyen", "Chạy quá ẩu", 1));
+        }
         adapter = new CommentAdapter(list);
     }
 

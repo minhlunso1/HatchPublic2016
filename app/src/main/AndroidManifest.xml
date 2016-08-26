@@ -17,7 +17,7 @@
         </activity>
         <activity android:name=".RatingActivity"
             android:label="@string/Rating"
-            android:windowSoftInputMode="adjustResize"/>
+            android:windowSoftInputMode="adjustUnspecified"/>
     </application>
 
 </manifest>

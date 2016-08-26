@@ -6,15 +6,19 @@ package minhna.hatchsolution;
 public class User {
     public int img_ava;
     public String name;
-    public String group;
+    public int groupId;
+    public String depart;
     public float ratingMark;
     public String price;
+    public String seat;
 
-    public User(int img_ava, String name, String group, float ratingMark, String price) {
+    public User(int img_ava, String name, int groupId, String depart, float ratingMark, String price, String seat) {
         this.img_ava = img_ava;
         this.name = name;
-        this.group = group;
+        this.groupId = groupId;
+        this.depart= depart;
         this.ratingMark = ratingMark;
         this.price = price;
+        this.seat = seat;
     }
 }

@@ -3,11 +3,14 @@ package minhna.hatchsolution;
 import android.content.Context;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
+import android.text.SpannableString;
+import android.text.style.ForegroundColorSpan;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import java.util.List;
+import java.util.Random;
 
 public class SearchUserAdapter extends RecyclerView.Adapter<DriverViewHolder> {
 
@@ -34,10 +37,9 @@ public class SearchUserAdapter extends RecyclerView.Adapter<DriverViewHolder> {
         User tmp = list.get(position);
         holder.imgAva.setImageDrawable(ContextCompat.getDrawable(context, tmp.img_ava));
         holder.tvName.setText(tmp.name);
-        holder.tvGroup.setText(tmp.group);
+        holder.tvDepart.setText(tmp.depart);
         holder.tvPrice.setText(tmp.price);
         int mark = (int) tmp.ratingMark;
-
         if (mark>0)
             holder.imgStar1.setVisibility(View.VISIBLE);
         if (mark>1)
@@ -49,16 +51,10 @@ public class SearchUserAdapter extends RecyclerView.Adapter<DriverViewHolder> {
         if (mark>4)
             holder.imgStar5.setVisibility(View.VISIBLE);
 
-        if (mark>0)
-            holder.imgStarS1.setVisibility(View.VISIBLE);
-        if (mark>1)
-            holder.imgStarS2.setVisibility(View.VISIBLE);
-        if (mark>2)
-            holder.imgStarS3.setVisibility(View.VISIBLE);
-        if (mark>3)
-            holder.imgStarS4.setVisibility(View.VISIBLE);
-        if (mark>4)
-            holder.imgStarS5.setVisibility(View.VISIBLE);
+        Random random = new Random();
+        String availableSeat = random.nextInt(38) + " ghế trống";
+        holder.tvAvailSeat.setText(availableSeat);
+        holder.tvChair.setText(tmp.seat);
     }
 
     @Override

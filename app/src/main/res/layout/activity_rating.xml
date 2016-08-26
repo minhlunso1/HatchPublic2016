@@ -4,12 +4,12 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp">
+        android:layout_marginTop="24dp">
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/img_ava"
-            android:layout_width="110dp"
-            android:layout_height="120dp"
+            android:layout_width="185dp"
+            android:layout_height="190dp"
             android:layout_centerHorizontal="true"
             android:src="@drawable/user_5"/>
 
@@ -28,7 +28,7 @@
         <TextView
             android:id="@+id/tv_intro"
             android:textColor="@color/black"
-            android:textSize="16sp"
+            android:textSize="18sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
@@ -39,186 +39,82 @@
             android:layout_below="@+id/tv_title"
             android:text="@string/Intro_rating_screen" />
 
-        <RelativeLayout
-            android:id="@+id/driver_rating"
-            android:layout_width="match_parent"
+        <LinearLayout
+            android:id="@+id/rating"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/tv_intro">
-            <TextView
-                android:textColor="@color/black"
-                android:textSize="21sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_centerVertical="true"
-                android:layout_marginTop="16dp"
-                android:layout_marginLeft="16dp"
-                android:text="@string/Driver" />
+            android:layout_below="@id/tv_intro"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
 
-            <LinearLayout
-                android:id="@+id/rating"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_marginTop="5dp"
-                android:layout_marginRight="16dp"
-                android:orientation="horizontal">
+            <ImageView
+                android:id="@+id/star1"
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:paddingBottom="16dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingTop="16dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_star_orange_border" />
 
-                <ImageView
-                    android:id="@+id/star1"
-                    android:layout_width="0dp"
-                    android:layout_height="56dp"
-                    android:layout_weight="1"
-                    android:adjustViewBounds="true"
-                    android:paddingBottom="16dp"
-                    android:paddingLeft="5dp"
-                    android:paddingRight="5dp"
-                    android:paddingTop="16dp"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/ic_star_orange_border" />
+            <ImageView
+                android:id="@+id/star2"
+                android:layout_width="34dp"
+                android:layout_height="56dp"
+                android:adjustViewBounds="true"
+                android:paddingBottom="16dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingTop="16dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_star_orange_border" />
 
-                <ImageView
-                    android:id="@+id/star2"
-                    android:layout_width="34dp"
-                    android:layout_height="56dp"
-                    android:adjustViewBounds="true"
-                    android:paddingBottom="16dp"
-                    android:paddingLeft="5dp"
-                    android:paddingRight="5dp"
-                    android:paddingTop="16dp"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/ic_star_orange_border" />
+            <ImageView
+                android:id="@+id/star3"
+                android:layout_width="34dp"
+                android:layout_height="56dp"
+                android:adjustViewBounds="true"
+                android:paddingBottom="16dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingTop="16dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_star_orange_border"/>
 
-                <ImageView
-                    android:id="@+id/star3"
-                    android:layout_width="34dp"
-                    android:layout_height="56dp"
-                    android:adjustViewBounds="true"
-                    android:paddingBottom="16dp"
-                    android:paddingLeft="5dp"
-                    android:paddingRight="5dp"
-                    android:paddingTop="16dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/ic_star_orange_border"/>
+            <ImageView
+                android:id="@+id/star4"
+                android:layout_width="34dp"
+                android:layout_height="56dp"
+                android:adjustViewBounds="true"
+                android:paddingBottom="16dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingTop="16dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_star_orange_border" />
 
-                <ImageView
-                    android:id="@+id/star4"
-                    android:layout_width="34dp"
-                    android:layout_height="56dp"
-                    android:adjustViewBounds="true"
-                    android:paddingBottom="16dp"
-                    android:paddingLeft="5dp"
-                    android:paddingRight="5dp"
-                    android:paddingTop="16dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/ic_star_orange_border" />
+            <ImageView
+                android:id="@+id/star5"
+                android:layout_width="34dp"
+                android:layout_height="56dp"
+                android:adjustViewBounds="true"
+                android:paddingBottom="16dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingTop="16dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_star_orange_border" />
 
-                <ImageView
-                    android:id="@+id/star5"
-                    android:layout_width="34dp"
-                    android:layout_height="56dp"
-                    android:adjustViewBounds="true"
-                    android:paddingBottom="16dp"
-                    android:paddingLeft="5dp"
-                    android:paddingRight="5dp"
-                    android:paddingTop="16dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/ic_star_orange_border" />
-            </LinearLayout>
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/group_rating"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/driver_rating">
-            <TextView
-                android:textColor="@color/black"
-                android:textSize="21sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_centerVertical="true"
-                android:layout_marginTop="16dp"
-                android:layout_marginLeft="16dp"
-                android:text="@string/Client" />
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_marginTop="5dp"
-                android:layout_marginRight="16dp"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:id="@+id/starS1"
-                    android:layout_width="0dp"
-                    android:layout_height="56dp"
-                    android:layout_weight="1"
-                    android:adjustViewBounds="true"
-                    android:paddingBottom="16dp"
-                    android:paddingLeft="5dp"
-                    android:paddingRight="5dp"
-                    android:paddingTop="16dp"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/ic_star_orange_border" />
-
-                <ImageView
-                    android:id="@+id/starS2"
-                    android:layout_width="34dp"
-                    android:layout_height="56dp"
-                    android:adjustViewBounds="true"
-                    android:paddingBottom="16dp"
-                    android:paddingLeft="5dp"
-                    android:paddingRight="5dp"
-                    android:paddingTop="16dp"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/ic_star_orange_border" />
-
-                <ImageView
-                    android:id="@+id/starS3"
-                    android:layout_width="34dp"
-                    android:layout_height="56dp"
-                    android:adjustViewBounds="true"
-                    android:paddingBottom="16dp"
-                    android:paddingLeft="5dp"
-                    android:paddingRight="5dp"
-                    android:paddingTop="16dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/ic_star_orange_border"/>
-
-                <ImageView
-                    android:id="@+id/starS4"
-                    android:layout_width="34dp"
-                    android:layout_height="56dp"
-                    android:adjustViewBounds="true"
-                    android:paddingBottom="16dp"
-                    android:paddingLeft="5dp"
-                    android:paddingRight="5dp"
-                    android:paddingTop="16dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/ic_star_orange_border" />
-
-                <ImageView
-                    android:id="@+id/starS5"
-                    android:layout_width="34dp"
-                    android:layout_height="56dp"
-                    android:adjustViewBounds="true"
-                    android:paddingBottom="16dp"
-                    android:paddingLeft="5dp"
-                    android:paddingRight="5dp"
-                    android:paddingTop="16dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/ic_star_orange_border" />
-
-            </LinearLayout>
-        </RelativeLayout>
+        </LinearLayout>
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/group_rating"
+            android:layout_below="@id/rating"
             android:hint="@string/Leave_comment"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"

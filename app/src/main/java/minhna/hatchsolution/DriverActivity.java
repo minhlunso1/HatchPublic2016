@@ -11,7 +11,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -32,6 +31,7 @@ public class DriverActivity extends AppCompatActivity implements NavigationView.
 
     private SearchUserAdapter adapter;
     private List<User> list;
+    String group;
 
     public DriverActivity() {
     }
@@ -63,16 +63,18 @@ public class DriverActivity extends AppCompatActivity implements NavigationView.
 
         list = new ArrayList<>();
         List<User> baseList = new ArrayList<>();
-        baseList.add(new User(R.drawable.user_5, "Nguyễn Minh Trí", "Nhà xe Việt Khuê", 5.0f, "190.000đ"));
-        baseList.add(new User(R.drawable.user_2, "Vũ Quang Huy", "Nhà xe Hotelic", 3.0f, "180.000đ"));
-        baseList.add(new User(R.drawable.user_3, "Nguyễn Anh Minh", "Nhà xe Hoa Cúc", 2.0f, "170.000đ"));
-        baseList.add(new User(R.drawable.user_6, "Lý Quốc Hoàng", "Nhà xe Hotelic", 3.0f, "150.000đ"));
-        baseList.add(new User(R.drawable.user_4, "Trần Lữ Sinh", "Nhà xe Hotelic", 3.0f, "150.000đ"));
-        baseList.add(new User(R.drawable.user_1, "Đỗ Việt Linh", "Nhà xe Hotelic", 3.0f, "170.000đ"));
+        group = getString(R.string.Client) + " ";
+        String depart = getString(R.string.Depart) + " ";
+        baseList.add(new User(R.drawable.user_5, group + AC.GROUP_1_STR, 1, depart + "8:00", 5.0f, "300.000đ / vé", "Giường nằm 38 chỗ "));
+        baseList.add(new User(R.drawable.user_4, group + AC.GROUP_2_STR, 2, depart + "15:00", 3.0f, "280.000đ / vé", "Giường nằm 41 chỗ "));
+        baseList.add(new User(R.drawable.user_2, group + AC.GROUP_3_STR, 3, depart + "8:00", 2.0f, "250.000đ / vé", "Giường nằm 38 chỗ "));
+        baseList.add(new User(R.drawable.user_3, group + AC.GROUP_2_STR, 3, depart + "10:00", 3.0f, "260.000đ / vé", "Giường nằm 45 chỗ "));
+        baseList.add(new User(R.drawable.user_1, group + AC.GROUP_3_STR, 2, depart + "19:00", 2.0f, "250.000đ / vé", "Giường nằm 41 chỗ "));
+        baseList.add(new User(R.drawable.user_6, group + AC.GROUP_2_STR, 3, depart + "8:00", 3.0f, "270.000đ / vé", "Giường nằm 41 chỗ "));
         for (int i=0;i<baseList.size();i++) {
             User user = baseList.get(i);
             int mark = (int) user.ratingMark;
-            if (BaseApplication.group == AC.ALL || Utils.getGroupString(BaseApplication.group).equals(user.group)) {
+            if (BaseApplication.group == AC.ALL || Utils.getGroupString(this, BaseApplication.group).equals(user.name)) {
                 if (mark <= BaseApplication.maxPoint && mark >= BaseApplication.minPoint)
                     list.add(user);
             }
@@ -121,11 +123,14 @@ public class DriverActivity extends AppCompatActivity implements NavigationView.
 
     @Override
     public void onItemClick(View itemView, int position) {
-        if (position==0) {
-            FragmentManager fm = getSupportFragmentManager();
-            CommentDialog editNameDialog = CommentDialog.newInstance();
-            editNameDialog.show(fm, "diag_comment");
-        } else
-            Toast.makeText(DriverActivity.this, getString(R.string.Please_choose_another), Toast.LENGTH_SHORT).show();
+        User tmp = list.get(position);
+        AC.GROUP_CHOOSEN_TYPE = tmp.groupId;
+        AC.GROUP_CHOOSEN = tmp.name;
+        AC.GROUP_AVA = tmp.img_ava;
+        AC.PRICE_CHOOSEN = tmp.price;
+
+        FragmentManager fm = getSupportFragmentManager();
+        CommentDialog editNameDialog = CommentDialog.newInstance();
+        editNameDialog.show(fm, "diag_comment");
     }
 }
