@@ -7,12 +7,12 @@ public class Utils {
 
     public static String getGroupString (int key) {
         String returnString = "Nhà xe ";
-        if (key==AC.LIEN_HUNG)
-            return returnString + "Liên Hưng";
-        else if (key==AC.VIET_NHAT)
-            return returnString + "Việt Nhật";
-        else if (key==AC.HANH_CAFE)
-            return returnString + "Hạnh Cafe";
+        if (key==AC.GROUP_1)
+            return returnString + "Việt Khuê";
+        else if (key==AC.GROUP_2)
+            return returnString + "Hotelic";
+        else if (key==AC.GROUP_3)
+            return returnString + "Hoa Cúc";
         else
             return returnString;
     }

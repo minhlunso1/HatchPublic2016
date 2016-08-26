@@ -37,6 +37,7 @@ public class SearchUserAdapter extends RecyclerView.Adapter<DriverViewHolder> {
         holder.tvGroup.setText(tmp.group);
         holder.tvPrice.setText(tmp.price);
         int mark = (int) tmp.ratingMark;
+
         if (mark>0)
             holder.imgStar1.setVisibility(View.VISIBLE);
         if (mark>1)
@@ -47,6 +48,17 @@ public class SearchUserAdapter extends RecyclerView.Adapter<DriverViewHolder> {
             holder.imgStar4.setVisibility(View.VISIBLE);
         if (mark>4)
             holder.imgStar5.setVisibility(View.VISIBLE);
+
+        if (mark>0)
+            holder.imgStarS1.setVisibility(View.VISIBLE);
+        if (mark>1)
+            holder.imgStarS2.setVisibility(View.VISIBLE);
+        if (mark>2)
+            holder.imgStarS3.setVisibility(View.VISIBLE);
+        if (mark>3)
+            holder.imgStarS4.setVisibility(View.VISIBLE);
+        if (mark>4)
+            holder.imgStarS5.setVisibility(View.VISIBLE);
     }
 
     @Override

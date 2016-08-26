@@ -69,7 +69,7 @@ public class CommentDialog extends DialogFragment {
         List<Comment> list = new ArrayList<>();
         list.add(new Comment(R.drawable.user_9,"Rita Phạm","Lái xe an toàn", 5));
         list.add(new Comment(R.drawable.user_7, "Trang Phan","Dịch vụ tốt, tài xế chu đáo", 5));
-        list.add(new Comment(R.drawable.user_8,"Lệ Quyên","Thắp nhan đầy đủ", 4));
+        list.add(new Comment(R.drawable.user_8,"Lệ Quyên","Tuy chậm mà chắc. Yên tâm.", 3));
         list.add(new Comment(R.drawable.user_10,"Chi Nguyen","Không vượt ẩu", 5));
         adapter = new CommentAdapter(list);
     }

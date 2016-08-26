@@ -17,7 +17,7 @@
         <ImageView
             android:id="@+id/img_ava"
             android:layout_width="100dp"
-            android:layout_height="185dp"
+            android:layout_height="215dp"
             android:src="@drawable/user_1"
             android:scaleType="centerCrop"/>
         <TextView
@@ -40,12 +40,54 @@
             android:layout_marginTop="5dp"
             android:text="Group"
             android:textSize="18sp"/>
+        <LinearLayout
+            android:id="@+id/group_rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@+id/img_ava"
+            android:layout_below="@+id/tv_group"
+            android:layout_marginLeft="16dp">
+
+            <ImageView
+                android:id="@+id/starS1"
+                android:layout_width="21dp"
+                android:layout_height="21dp"
+                android:src="@mipmap/green_star"
+                android:visibility="invisible"/>
+            <ImageView
+                android:id="@+id/starS2"
+                android:layout_width="21dp"
+                android:layout_height="21dp"
+                android:src="@mipmap/green_star"
+                android:visibility="invisible"/>
+            <ImageView
+                android:id="@+id/starS3"
+                android:layout_width="21dp"
+                android:layout_height="21dp"
+                android:src="@mipmap/green_star"
+                android:visibility="invisible"/>
+            <ImageView
+                android:id="@+id/starS4"
+                android:layout_width="21dp"
+                android:layout_height="21dp"
+                android:src="@mipmap/green_star"
+                android:visibility="invisible"/>
+            <ImageView
+                android:id="@+id/starS5"
+                android:layout_width="21dp"
+                android:layout_height="21dp"
+                android:src="@mipmap/green_star"
+                android:visibility="invisible"/>
+
+        </LinearLayout>
         <TextView
             android:id="@+id/tv_chair"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@+id/img_ava"
-            android:layout_below="@+id/tv_group"
+            android:layout_below="@+id/group_rating"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="5dp"
             android:text="@string/demo_chair"

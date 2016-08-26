@@ -5,7 +5,7 @@ package minhna.hatchsolution;
  */
 public class AC {
     public static int ALL = 0;
-    public static int LIEN_HUNG = 1;
-    public static int VIET_NHAT = 2;
-    public static int HANH_CAFE = 3;
+    public static int GROUP_1 = 1;
+    public static int GROUP_2 = 2;
+    public static int GROUP_3 = 3;
 }

@@ -28,8 +28,19 @@ public class RatingActivity extends AppCompatActivity {
     ImageView star4;
     @BindView(R.id.star5)
     ImageView star5;
+    @BindView(R.id.starS1)
+    ImageView starS1;
+    @BindView(R.id.starS2)
+    ImageView starS2;
+    @BindView(R.id.starS3)
+    ImageView starS3;
+    @BindView(R.id.starS4)
+    ImageView starS4;
+    @BindView(R.id.starS5)
+    ImageView starS5;
 
     private ImageView[] starsView;
+    private ImageView[] starsViews;
     private int starChoose;
 
     @Override
@@ -76,6 +87,23 @@ public class RatingActivity extends AppCompatActivity {
                     }
                     for (int j = finalI + 1; j < starsView.length; j++) {
                         starsView[j].setImageResource(R.drawable.ic_star_orange_border);
+                    }
+                }
+            });
+        }
+
+        starsViews = new ImageView[]{starS1, starS2, starS3, starS4, starS5};
+        for (int i = 0; i < starsViews.length; i++) {
+            final int finalI = i;
+            starsViews[i].setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    starChoose = finalI + 1;
+                    for (int j = 0; j <= finalI; j++) {
+                        starsViews[j].setImageResource(R.mipmap.orange_star);
+                    }
+                    for (int j = finalI + 1; j < starsView.length; j++) {
+                        starsViews[j].setImageResource(R.drawable.ic_star_orange_border);
                     }
                 }
             });

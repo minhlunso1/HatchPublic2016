@@ -81,7 +81,7 @@ public class DialogFilter extends DialogFragment {
             }
         });
 
-        String[] items = new String[]{driverActivity.getString(R.string.all), "Liên Hưng", "Việt Nhật", "Hạnh Cafe"};
+        String[] items = new String[]{driverActivity.getString(R.string.all), "Việt Khuê", "Hotelic", "Hoa Cúc"};
         ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_item, items);
         spinner.setAdapter(spinnerAdapter);
         spinner.setSelection(gender);

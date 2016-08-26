@@ -14,6 +14,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import butterknife.BindView;
@@ -62,12 +63,12 @@ public class DriverActivity extends AppCompatActivity implements NavigationView.
 
         list = new ArrayList<>();
         List<User> baseList = new ArrayList<>();
-        baseList.add(new User(R.drawable.user_5, "Nguyễn Minh Trí", "Nhà xe Việt Nhật", 5.0f, "190.000đ"));
-        baseList.add(new User(R.drawable.user_2, "Vũ Quang Huy", "Nhà xe Liên Hưng", 4.0f, "180.000đ"));
-        baseList.add(new User(R.drawable.user_3, "Nguyễn Anh Minh", "Nhà xe Hạnh Cafe", 3.0f, "170.000đ"));
-        baseList.add(new User(R.drawable.user_6, "Lý Quốc Hoàng", "Nhà xe Liên Hưng", 3.0f, "150.000đ"));
-        baseList.add(new User(R.drawable.user_4, "Trần Lữ Sinh", "Nhà xe Liên Hưng", 3.0f, "150.000đ"));
-        baseList.add(new User(R.drawable.user_1, "Đỗ Việt Linh", "Nhà xe Việt Nhật", 3.0f, "170.000đ"));
+        baseList.add(new User(R.drawable.user_5, "Nguyễn Minh Trí", "Nhà xe Việt Khuê", 5.0f, "190.000đ"));
+        baseList.add(new User(R.drawable.user_2, "Vũ Quang Huy", "Nhà xe Hotelic", 3.0f, "180.000đ"));
+        baseList.add(new User(R.drawable.user_3, "Nguyễn Anh Minh", "Nhà xe Hoa Cúc", 2.0f, "170.000đ"));
+        baseList.add(new User(R.drawable.user_6, "Lý Quốc Hoàng", "Nhà xe Hotelic", 3.0f, "150.000đ"));
+        baseList.add(new User(R.drawable.user_4, "Trần Lữ Sinh", "Nhà xe Hotelic", 3.0f, "150.000đ"));
+        baseList.add(new User(R.drawable.user_1, "Đỗ Việt Linh", "Nhà xe Hotelic", 3.0f, "170.000đ"));
         for (int i=0;i<baseList.size();i++) {
             User user = baseList.get(i);
             int mark = (int) user.ratingMark;
@@ -75,6 +76,7 @@ public class DriverActivity extends AppCompatActivity implements NavigationView.
                 if (mark <= BaseApplication.maxPoint && mark >= BaseApplication.minPoint)
                     list.add(user);
             }
+            Collections.sort(list, new DriverComparision());
         }
     }
 
