@@ -29,4 +29,8 @@
     <string name="Phone">Phone number</string>
     <string name="Receiver_name">Receiver name</string>
     <string name="Confirm">Confirm</string>
+    <string name="Book_successful">Thank for your booking .We will contact you as soon</string>
+    <string name="No_blank">Please input information</string>
+    <string name="No_ticket">Ticket Quantity</string>
+    <string name="Please_check_network">Please check network connection</string>
 </resources>

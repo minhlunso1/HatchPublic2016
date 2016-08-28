@@ -1,6 +1,8 @@
 package minhna.hatchsolution;
 
 import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 
 import java.util.Locale;
 
@@ -30,6 +32,19 @@ public class Utils {
                 return returnString + AC.GROUP_3_STR;
         }
         return returnString;
+    }
+
+    public static boolean isConnectionAvaiable(Context context) {
+        ConnectivityManager connectivity = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        if (connectivity != null) {
+            NetworkInfo[] info = connectivity.getAllNetworkInfo();
+            if (info != null)
+                for (int i = 0; i < info.length; i++)
+                    if (info[i].getState() == NetworkInfo.State.CONNECTED) {
+                        return true;
+                    }
+        }
+        return false;
     }
 
 }

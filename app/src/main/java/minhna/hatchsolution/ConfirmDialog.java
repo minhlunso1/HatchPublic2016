@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.firebase.client.Firebase;
 
@@ -26,6 +27,8 @@ public class ConfirmDialog extends DialogFragment {
     EditText edtName;
     @BindView(R.id.tv_phone)
     EditText edtPhone;
+    @BindView(R.id.tv_no_ticket)
+    EditText edtTicketQuantity;
     @BindView(R.id.tv_book)
     TextView btnDone;
 
@@ -45,6 +48,8 @@ public class ConfirmDialog extends DialogFragment {
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         Dialog dialog = super.onCreateDialog(savedInstanceState);
         driverActivity = (DriverActivity) getActivity();
+        Firebase.setAndroidContext(driverActivity);
+        myFirebaseRef = new Firebase(AC.FIREBASE_REF).child(String.valueOf(System.currentTimeMillis()));
         return dialog;
     }
 
@@ -63,16 +68,49 @@ public class ConfirmDialog extends DialogFragment {
         btnDone.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                if (Utils.isConnectionAvaiable(driverActivity)) {
+                    boolean first = false;
+                    boolean second = false;
+                    boolean last = false;
+                    if (edtName.getText().toString().trim().equals(""))
+                        edtName.setError(driverActivity.getString(R.string.No_blank));
+                    else
+                        first = true;
+                    if (edtPhone.getText().toString().trim().equals(""))
+                        edtPhone.setError(driverActivity.getString(R.string.No_blank));
+                    else
+                        second = true;
+                    if (edtTicketQuantity.getText().toString().trim().equals(""))
+                        edtTicketQuantity.setError(driverActivity.getString(R.string.No_blank));
+                    else
+                        last = true;
+                    if (first == true && second == true && last == true) {
+                        bookTicket();
+                        dismiss();
+                    }
+                } else
+                    Toast.makeText(driverActivity, driverActivity.getString(R.string.Please_check_network), Toast.LENGTH_SHORT).show();
             }
         });
+    }
 
+    private void bookTicket() {
+        myFirebaseRef.child("Group_name").setValue(AC.currentUser.name);
+        myFirebaseRef.child("Depart").setValue(AC.currentUser.depart);
+        myFirebaseRef.child("Type_vehicle").setValue(AC.currentUser.seat);
+        myFirebaseRef.child("Price").setValue(AC.currentUser.price);
+        myFirebaseRef.child("Travel").setValue("Sai Gon - Nha Trang 1/9/2016");
+        myFirebaseRef.child("Receiver").setValue(edtName.getText().toString());
+        myFirebaseRef.child("Phone").setValue(edtPhone.getText().toString());
+        myFirebaseRef.child("Ticket_Quantity").setValue(edtTicketQuantity.getText().toString());
+        Toast.makeText(driverActivity, driverActivity.getString(R.string.Book_successful), Toast.LENGTH_LONG).show();
     }
 
     @Override
     public void onResume() {
         makeWrapContent();
         super.onResume();
+        getDialog().setTitle(driverActivity.getString(R.string.Confirm));
     }
 
     private void makeWrapContent() {

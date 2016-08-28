@@ -28,4 +28,7 @@
     <string name="Depart">Khởi hành:</string>
     <string name="Phone">Số điện thoại</string>
     <string name="Confirm">Xác Nhận</string>
+    <string name="No_blank">Cảm ơn bạn đã đặt vé .Chúng tôi sẽ liên lạc với bạn thật sớm.</string>
+    <string name="No_ticket">Số lượng vé</string>
+    <string name="Please_check_network">Vui lòng kiểm tra internet</string>
 </resources>

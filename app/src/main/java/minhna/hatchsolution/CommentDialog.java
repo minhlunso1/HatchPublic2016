@@ -1,7 +1,6 @@
 package minhna.hatchsolution;
 
 import android.app.Dialog;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -36,7 +35,7 @@ public class CommentDialog extends DialogFragment {
     TextView tvPrice;
 
     private CommentAdapter adapter;
-    private AppCompatActivity activity;
+    private DriverActivity activity;
 
     public CommentDialog() {
     }
@@ -51,7 +50,7 @@ public class CommentDialog extends DialogFragment {
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         Dialog dialog = super.onCreateDialog(savedInstanceState);
         dialog.getWindow().requestFeature(Window.FEATURE_NO_TITLE);
-        activity = (AppCompatActivity) getActivity();
+        activity = (DriverActivity) getActivity();
         return dialog;
     }
 
@@ -121,9 +120,7 @@ public class CommentDialog extends DialogFragment {
 
     @OnClick(R.id.tv_book)
     public void bookTrip() {
-        Intent intent = new Intent(getActivity(), RatingActivity.class);
-        startActivity(intent);
-        activity.overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+        activity.showConfirmDialog();
         dismiss();
     }
 

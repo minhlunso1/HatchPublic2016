@@ -135,6 +135,7 @@ public class DriverActivity extends AppCompatActivity implements NavigationView.
     @Override
     public void onItemClick(View itemView, int position) {
         User tmp = list.get(position);
+        AC.currentUser = tmp;
         AC.GROUP_CHOOSEN_TYPE = tmp.groupId;
         AC.GROUP_CHOOSEN = tmp.name;
         AC.GROUP_AVA = tmp.img_ava;
@@ -143,5 +144,11 @@ public class DriverActivity extends AppCompatActivity implements NavigationView.
         FragmentManager fm = getSupportFragmentManager();
         CommentDialog editNameDialog = CommentDialog.newInstance();
         editNameDialog.show(fm, "diag_comment");
+    }
+
+    public void showConfirmDialog() {
+        FragmentManager fm = getSupportFragmentManager();
+        ConfirmDialog editNameDialog = ConfirmDialog.newInstance();
+        editNameDialog.show(fm, "diag_confirm");
     }
 }
