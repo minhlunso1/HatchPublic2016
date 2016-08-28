@@ -16,6 +16,8 @@ import android.widget.TextView;
 
 import com.rey.material.widget.Spinner;
 
+import java.util.Locale;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import io.apptik.widget.MultiSlider;
@@ -112,6 +114,9 @@ public class DialogFilter extends DialogFragment {
     }
 
     private void setDistanceNumber(TextView tv) {
+        if (Locale.getDefault().getLanguage().equals("en"))
+            tv.setText(minStar + " - "+maxDistance + " star");
+        else
             tv.setText(minStar + " - "+maxDistance + " sao");
     }
 

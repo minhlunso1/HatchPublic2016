@@ -9,7 +9,8 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".DriverActivity">
+        <activity android:name=".DriverActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -17,7 +18,8 @@
         </activity>
         <activity android:name=".RatingActivity"
             android:label="@string/Rating"
-            android:windowSoftInputMode="adjustUnspecified"/>
+            android:windowSoftInputMode="adjustUnspecified"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

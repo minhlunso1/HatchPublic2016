@@ -66,7 +66,8 @@ public class CommentDialog extends DialogFragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        tvTitle.setText(AC.GROUP_CHOOSEN);
+        String title = AC.GROUP_CHOOSEN + " Review";
+        tvTitle.setText(title);
         tvPrice.setText(AC.PRICE_CHOOSEN);
         getData();
         setupRV();

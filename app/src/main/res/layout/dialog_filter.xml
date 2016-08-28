@@ -91,6 +91,7 @@
         app:spn_labelTextSize="12dp"
         app:spn_arrowColor="@color/colorAccent"
         app:spn_dividerColor="@color/colorAccent"
+        app:spn_labelPadding="56dp"
         app:rd_style="@style/Material.Drawable.Ripple.Wave" />
 
 </RelativeLayout>

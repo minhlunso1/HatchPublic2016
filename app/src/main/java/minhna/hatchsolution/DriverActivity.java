@@ -15,6 +15,7 @@ import android.view.View;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Locale;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -63,14 +64,24 @@ public class DriverActivity extends AppCompatActivity implements NavigationView.
 
         list = new ArrayList<>();
         List<User> baseList = new ArrayList<>();
-        group = getString(R.string.Client) + " ";
         String depart = getString(R.string.Depart) + " ";
-        baseList.add(new User(R.drawable.user_5, group + AC.GROUP_1_STR, 1, depart + "8:00", 5.0f, "300.000đ / vé", "Giường nằm 38 chỗ "));
-        baseList.add(new User(R.drawable.user_4, group + AC.GROUP_2_STR, 2, depart + "15:00", 3.0f, "280.000đ / vé", "Giường nằm 41 chỗ "));
-        baseList.add(new User(R.drawable.user_2, group + AC.GROUP_3_STR, 3, depart + "8:00", 2.0f, "250.000đ / vé", "Giường nằm 38 chỗ "));
-        baseList.add(new User(R.drawable.user_3, group + AC.GROUP_2_STR, 3, depart + "10:00", 3.0f, "260.000đ / vé", "Giường nằm 45 chỗ "));
-        baseList.add(new User(R.drawable.user_1, group + AC.GROUP_3_STR, 2, depart + "19:00", 2.0f, "250.000đ / vé", "Giường nằm 41 chỗ "));
-        baseList.add(new User(R.drawable.user_6, group + AC.GROUP_2_STR, 3, depart + "8:00", 3.0f, "270.000đ / vé", "Giường nằm 41 chỗ "));
+        if (Locale.getDefault().getLanguage().equals("en")) {
+            group = " " + getString(R.string.Client);
+            baseList.add(new User(R.drawable.user_5, AC.GROUP_1_STR + group, 1, depart + "8:00", 5.0f, "300.000đ / ticket", "Reclining 40 seats"));
+            baseList.add(new User(R.drawable.user_4, AC.GROUP_2_STR + group, 2, depart + "15:00", 3.0f, "280.000đ / ticket", "Reclining 41 seats"));
+            baseList.add(new User(R.drawable.user_2, AC.GROUP_3_STR + group, 3, depart + "8:00", 2.0f, "250.000đ / ticket", "Reclining 38 seats"));
+            baseList.add(new User(R.drawable.user_3, AC.GROUP_2_STR + group, 3, depart + "10:00", 3.0f, "260.000đ / ticket", "Reclining 45 seats"));
+            baseList.add(new User(R.drawable.user_1, AC.GROUP_3_STR + group, 2, depart + "19:00", 2.0f, "250.000đ / ticket", "Reclining 40 seats"));
+            baseList.add(new User(R.drawable.user_6, AC.GROUP_2_STR + group, 3, depart + "8:00", 3.0f, "270.000đ / ticket", "Reclining 41 seats"));
+        } else {
+            group = getString(R.string.Client) + " ";
+            baseList.add(new User(R.drawable.user_5, group + AC.GROUP_1_STR, 1, depart + "8:00", 5.0f, "300.000đ / vé", "Giường nằm 38 chỗ "));
+            baseList.add(new User(R.drawable.user_4, group + AC.GROUP_2_STR, 2, depart + "15:00", 3.0f, "280.000đ / vé", "Giường nằm 41 chỗ "));
+            baseList.add(new User(R.drawable.user_2, group + AC.GROUP_3_STR, 3, depart + "8:00", 2.0f, "250.000đ / vé", "Giường nằm 38 chỗ "));
+            baseList.add(new User(R.drawable.user_3, group + AC.GROUP_2_STR, 3, depart + "10:00", 3.0f, "260.000đ / vé", "Giường nằm 45 chỗ "));
+            baseList.add(new User(R.drawable.user_1, group + AC.GROUP_3_STR, 2, depart + "19:00", 2.0f, "250.000đ / vé", "Giường nằm 41 chỗ "));
+            baseList.add(new User(R.drawable.user_6, group + AC.GROUP_2_STR, 3, depart + "8:00", 3.0f, "270.000đ / vé", "Giường nằm 41 chỗ "));
+        }
         for (int i=0;i<baseList.size();i++) {
             User user = baseList.get(i);
             int mark = (int) user.ratingMark;
@@ -78,7 +89,7 @@ public class DriverActivity extends AppCompatActivity implements NavigationView.
                 if (mark <= BaseApplication.maxPoint && mark >= BaseApplication.minPoint)
                     list.add(user);
             }
-            Collections.sort(list, new DriverComparision());
+//            Collections.sort(list, new DriverComparision());
         }
     }
 

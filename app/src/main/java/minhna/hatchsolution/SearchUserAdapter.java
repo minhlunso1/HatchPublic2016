@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import java.util.List;
+import java.util.Locale;
 import java.util.Random;
 
 public class SearchUserAdapter extends RecyclerView.Adapter<DriverViewHolder> {
@@ -52,7 +53,11 @@ public class SearchUserAdapter extends RecyclerView.Adapter<DriverViewHolder> {
             holder.imgStar5.setVisibility(View.VISIBLE);
 
         Random random = new Random();
-        String availableSeat = random.nextInt(38) + " ghế trống";
+        String availableSeat;
+        if (Locale.getDefault().getLanguage().equals("en"))
+            availableSeat = random.nextInt(38-10) + 10 + " available seats";
+        else
+            availableSeat = random.nextInt(38-10) + 10 + " ghế trống";
         holder.tvAvailSeat.setText(availableSeat);
         holder.tvChair.setText(tmp.seat);
     }
